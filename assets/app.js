@@ -70,6 +70,7 @@ $(document).ready(function(){
     function runGiphy(){
         //retrieves giph id from clicked img
         var gifID = $(this).attr('data-id');
+        var that = this;
         // url using giphy id for search
         var queryURL = "http://api.giphy.com/v1/gifs/" + gifID + "?api_key=dc6zaTOxFJmzC";
         //AJAX call using id search url
@@ -81,8 +82,7 @@ $(document).ready(function(){
                 //variable for moving image url
                 var movingImageURL = results.images.fixed_height.url;
                 //variable for new img element with new src
-                var movingGif = $('img').attr('src', movingImageURL)
-                $(this).html(movingGif);
+                var movingGif = $(that).find('img').attr('src', movingImageURL);
             })
     }
 });
