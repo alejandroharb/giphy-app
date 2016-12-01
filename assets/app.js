@@ -41,7 +41,7 @@ $(document).ready(function(){
         //storing topic name from data attribute
         var topicName = $(this).attr('data-topic');
         //url for giphy AJAX with corresponding topic clicked
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + topicName + "&api_key=dc6zaTOxFJmzC&limit=10";
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + topicName + "&api_key=dc6zaTOxFJmzC&limit=10";
         //AJAX call
         $.ajax({url:queryURL, method:'GET'})
             .done(function(response){
@@ -72,7 +72,7 @@ $(document).ready(function(){
         var gifID = $(this).attr('data-id');
         var that = this;
         // url using giphy id for search
-        var queryURL = "http://api.giphy.com/v1/gifs/" + gifID + "?api_key=dc6zaTOxFJmzC";
+        var queryURL = "https://api.giphy.com/v1/gifs/" + gifID + "?api_key=dc6zaTOxFJmzC";
         //AJAX call using id search url
         $.ajax({url:queryURL, method:'GET'})
             .done(function(response){
