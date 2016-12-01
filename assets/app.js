@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
     //initial array of topics of interest for buttons
-    var topics = ["dogs", "sports", "travel"];
+    var topics = ["dogs", "sports", "travel", "science", "astronomy", "physics", "adventure", "mountains", "skydiving", "friendship", "stars", "guitar", "instruments", "algorithms", "entrepreneurship"];
 
     //function creates buttons of topics array
     function createButtons() {
@@ -30,6 +30,8 @@ $(document).ready(function(){
         topics.push(topic);
         //runs createButtons function to add button of newly enetered topic
         createButtons();
+        //erases content inside input box
+        $('#topic-input').val("");
         //prevents page reload after form submit
         return false;
     });
@@ -50,7 +52,7 @@ $(document).ready(function(){
                 //loops through all gyphs returned set by limit of 10(in url)
                 for(var i = 0; i < results.length; i++){
                     //variable holds new div element
-                    var giphyDiv = $('<div class="giphy">');
+                    var giphyDiv = $('<div class=" col-md-4 giphy">');
                     giphyDiv.attr('data-id', results[i].id);
                     // variable for still giph image
                     var stillImageURL = results[i].images.fixed_height_still.url;
